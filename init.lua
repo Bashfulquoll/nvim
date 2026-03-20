@@ -52,3 +52,33 @@ vim.o.splitbelow = true
 --   and `:help lua-guide-options`
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- When making substiutions (with :s) this allows for a live preview while doing so:
+vim.o.inccommand = 'split'
+
+-- Show which line the cursor is currently on:
+vim.o.cursorline = true
+
+-- Provides an offset from the top of the bottom of the screen when scrolling.
+vim.o.scrolloff = 10
+
+-- Create popups to confirm actions that would otherwise fail due to unsaved changes.
+-- EG: Ask to save when quitting a file.
+vim.o.confirm = true
+
+-- [[ BASIC KEYMAPS ]]
+-- Can get some help here with ':help vim.keymap.set()'
+
+-- Clear highlights on search when pressting <Esc> in normal mode
+-- See ':help hlsearch'
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Diagnostic Config & Keymaps
+-- See :help vim.diagnostic.Opts
+vim.diagnostic.config {
+  update_in_insert = false, -- Stops updating warnings and errors while typing.
+  severity_sort = true, -- Sorts severities, Error -> Warning -> Info.
+  float = { border = 'rounded', source = 'if_many' }, 
+  -- Sets floating window borders to rounded. if_many source = will only show the source file if there are multiple sources, if there is only one source, it won't show the file name.
+  underline = { severity = { min = vim.diagnostic.severity.WARN } },
+  -- The above line only sets underlining of diagonostics to happen for severities above warning (will only show underlines for Warnings and Errors).
