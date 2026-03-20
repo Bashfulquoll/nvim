@@ -82,3 +82,11 @@ vim.diagnostic.config {
   -- Sets floating window borders to rounded. if_many source = will only show the source file if there are multiple sources, if there is only one source, it won't show the file name.
   underline = { severity = { min = vim.diagnostic.severity.WARN } },
   -- The above line only sets underlining of diagonostics to happen for severities above warning (will only show underlines for Warnings and Errors).
+  -- Can switch between these as you prefer
+  virtual_text = true, -- Text shows up at the end of the line
+  virtual_lines = false, -- Text shows up underneath the line, with virtual lines
+
+  -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
+  jump = { float = true },
+}
+
