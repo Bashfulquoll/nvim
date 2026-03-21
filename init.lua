@@ -13,3 +13,6 @@ require 'options'
 
 -- [[Set Basic Keymaps]]
 require 'keymaps'
+
+-- [[Install and load Lazy plugin manager]]
+require 'lazy-install'
