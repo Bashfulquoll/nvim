@@ -16,3 +16,6 @@ require 'keymaps'
 
 -- [[Install and load Lazy plugin manager]]
 require 'lazy-install'
+
+-- [[Configure and install plugins]]
+require 'lazy-plugins'
