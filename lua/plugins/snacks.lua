@@ -1,3 +1,4 @@
+--- My new comment
 ---@module 'lazy'
 ---@type LazySpec
 return {
