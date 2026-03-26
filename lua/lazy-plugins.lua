@@ -14,4 +14,5 @@ require('lazy').setup({
 	
 	-- Add Catppuccin theme:
 	require 'plugins.catppuccin',
+	require 'plugins.gitsigns'
 })
